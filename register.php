@@ -11,7 +11,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $surname = (isset($_POST['surname']))? $_POST['surname']:null,
         $email = (isset($_POST['email']))? $_POST['email']:null,
         $password = (isset($_POST['password']))? $_POST['password']:null,
-        $passwordvalidaion = (isset($_POST['passwordvalidaion'])? $_POST['passwordvalidaion']:null)
+        $passwordvalidaion = (isset($_POST['passwordvalidation'])? $_POST['passwordvalidation']:null)
     ];
 
     if(empty($first_name)) {
@@ -29,7 +29,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     if(empty($password) || strlen($password) < 6) {
         $errors['password'] = "No password entered or is too short.";
     } elseif ($password != $passwordvalidaion) {
-        $errors['confirmpassword'] = "Password do not match.";
+        $errors['confirm_password'] = "Password do not match.";
     }
 
     foreach($errors as $error) {
